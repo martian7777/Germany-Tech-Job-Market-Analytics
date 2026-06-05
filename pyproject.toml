@@ -1,0 +1,15 @@
+[project]
+name = "detech-jobs-api"
+version = "0.1.0"
+description = "Germany Tech Job Market Analytics — FastAPI backend (Vercel Python function)."
+# Pin to 3.12.x ONLY. Vercel currently offers 3.12/3.13/3.14; a loose ">=3.12"
+# would let it pick 3.14, for which pydantic-core 2.27.2 has no prebuilt wheel and
+# fails to compile (PyO3 0.22.6 maxes out at Python 3.13). 3.12 has a cp312 wheel.
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi==0.115.6",
+    "sqlalchemy==2.0.36",
+    "pydantic==2.10.4",
+    "beautifulsoup4==4.12.3",
+    "requests==2.32.3",
+]
